@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+:root {
+  --brand-cyan: #04c7f4;
+  --brand-blue: #0878f5;
+  --brand-indigo: #2430a8;
+  --brand-purple: #6120a5;
+  --brand-violet: #7d2dae;
+  --brand-magenta: #b4238a;
+  --brand-dark: #070827;
+  --brand-navy: #10124a;
+  --brand-soft: #f4f7ff;
+  --brand-muted: #6b6f88;
+  --text-dark: #111326;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--brand-soft);
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.brand-bg {
+  background:
+    radial-gradient(circle at 8% 26%, rgba(4, 199, 244, 0.68), transparent 32%),
+    radial-gradient(circle at 92% 8%, rgba(180, 35, 138, 0.38), transparent 30%),
+    radial-gradient(circle at 72% 72%, rgba(97, 32, 165, 0.48), transparent 34%),
+    linear-gradient(135deg, #081045 0%, #1321a0 42%, #36116a 72%, #130924 100%);
+}
+
+.brand-pattern::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.13) 0 16%, transparent 17%),
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.08) 0 10%, transparent 11%);
+  background-position: 0 0, 28px 28px;
+  background-size: 96px 96px;
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+.glass-panel {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 26px 80px rgba(7, 8, 39, 0.3);
+  backdrop-filter: blur(18px);
+}
+
+.testimonial-card {
+  animation: testimonial-card-in 700ms ease both;
+}
+
+.testimonial-avatar {
+  animation: testimonial-avatar-glow 2.8s ease-in-out infinite;
+}
+
+@keyframes testimonial-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes testimonial-avatar-glow {
+  0%,
+  100% {
+    box-shadow: 0 10px 24px rgba(7, 8, 39, 0.25), 0 0 0 0 rgba(4, 199, 244, 0.32);
+  }
+  50% {
+    box-shadow: 0 10px 24px rgba(7, 8, 39, 0.25), 0 0 0 9px rgba(180, 35, 138, 0.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-card,
+  .testimonial-avatar {
+    animation: none;
+  }
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
